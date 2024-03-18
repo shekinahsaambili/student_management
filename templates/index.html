@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/boostrap/4.5.0/css/boostrap.min.css" rel="stylesheet">
+    
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            padding: 20px;
+            color: antiquewhite;
+            background-color:rgb(97, 96, 94);
+        }
+        th{
+            background-color: rgb(2, 156, 97);
+
+        }
+        td{
+            background-color: #835c73;
+        }
+        th,td{
+            padding: 0.7em; text-align: center;
+            border: 1px solid black;
+            padding-bottom: 50px;
+        }
+        a{
+            padding-top: 1000px;
+        }
+    </style>
+</head>
+<body style="align-items: center;">
+    <h1>LISTE DES ETUDIANTS</h1>
+    <form action="/index">
+    <table border="1" align="center" >
+        <thead>
+            <h1 style="color: red;"><a al href="/appel">+</a></strong></h1>
+            <tr>
+                <th>NOM</th>
+                <th>POSTNOM</th>    
+                <th>MATRICULE</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for element in elements %}
+            <tr>
+                <td>{{ element[0] }}</td>
+                <td >{{ element[1] }}</td>
+                <td>{{ element[2] }}</td>
+                
+                    <td style="background-color:rgb(143, 139, 139);"> <a href="/delete/{{ element[2] }} ">Supprimer</a> </td>
+                        
+                    
+                   <td style="background-color: rgb(160, 241, 67);"> <a href="/lancer_update/{{ element[2] }}"> UPDATE </a></td>
+                        
+                    
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</form>
+</body>
+</html>
